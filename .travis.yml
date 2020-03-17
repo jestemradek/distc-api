@@ -1,0 +1,10 @@
+language: php
+php:
+  - 7.3
+before_install:
+  - composer selfupdate
+install:
+  - composer install
+script:
+  - ./bin/phpunit
+  - composer validate
