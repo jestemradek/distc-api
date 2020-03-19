@@ -42,7 +42,7 @@ class NavigatorTest extends TestCase
         );
         $this->assertSame(
             6856.55,
-            round($distance->get(new Haversine, new MetreToKilometre), 2)
+            round($distance->get(new Haversine, new MetreToKilometre), 3)
         );            
     }
 
@@ -59,8 +59,8 @@ class NavigatorTest extends TestCase
             )            
         );
         $this->assertSame(
-            6875.32,
-            round($distance->get(new Vincenty, new MetreToKilometre), 2)
+            6875.317,
+            round($distance->get(new Vincenty, new MetreToKilometre), 3)
         );            
     }
 }
