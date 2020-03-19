@@ -1,10 +1,15 @@
 language: php
 php:
+  - 7.0
+  - 7.1
+  - 7.2
   - 7.3
+  - nightly
 before_install:
   - composer selfupdate
 install:
   - composer install
 script:
   - ./bin/phpunit
+  - ./vendor/bin/php-cs-fixer fix --diff --dry-run -v
   - composer validate

@@ -19,6 +19,7 @@
         "treffynnon/navigator": "^1.1"
     },
     "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.16",
         "symfony/phpunit-bridge": "^5.0"
     },
     "config": {
