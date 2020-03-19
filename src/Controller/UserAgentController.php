@@ -16,7 +16,7 @@ class UserAgentController extends AbstractController
     {
         return new JsonResponse(
             [
-                "user-agent" => $request->headers->get('User-Agent')
+                'user-agent' => $request->headers->get('User-Agent'),
             ]
         );
     }

@@ -20,7 +20,7 @@ class NavigatorTest extends TestCase
             new LatLong(
                 new Coordinate(0),
                 new Coordinate(0)
-            )            
+            )
         );
         $this->assertSame(
             0,
@@ -38,12 +38,12 @@ class NavigatorTest extends TestCase
             new LatLong(
                 new Coordinate(52.2330653),
                 new Coordinate(20.9211139)
-            )            
+            )
         );
         $this->assertSame(
             6856.55,
-            round($distance->get(new Haversine, new MetreToKilometre), 3)
-        );            
+            round($distance->get(new Haversine(), new MetreToKilometre()), 3)
+        );
     }
 
     public function testNewYorkToWarsawVincentyDistance()
@@ -56,11 +56,11 @@ class NavigatorTest extends TestCase
             new LatLong(
                 new Coordinate(52.2330653),
                 new Coordinate(20.9211139)
-            )            
+            )
         );
         $this->assertSame(
             6875.317,
-            round($distance->get(new Vincenty, new MetreToKilometre), 3)
-        );            
+            round($distance->get(new Vincenty(), new MetreToKilometre()), 3)
+        );
     }
 }

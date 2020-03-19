@@ -15,7 +15,7 @@ class DefaultController extends AbstractController
     {
         return new JsonResponse(
             [
-                "message" => "Welcome to DistC API - GPS Distance Calculator"
+                'message' => 'Welcome to DistC API - GPS Distance Calculator',
             ]
         );
     }
