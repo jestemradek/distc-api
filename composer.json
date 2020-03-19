@@ -4,7 +4,7 @@
     "description": "GPS Distance Calculator PHP (Symfony 5)",
     "license": "proprietary",
     "require": {
-        "php": "^7.2.5",
+        "php": "^7.3",
         "ext-ctype": "*",
         "ext-iconv": "*",
         "guzzlehttp/guzzle": "^6.5",
