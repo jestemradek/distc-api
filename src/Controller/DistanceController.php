@@ -19,12 +19,11 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Validation;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
-
 class DistanceController extends AbstractController
 {
     /**
      * @Route("/distance")
-     * 
+     *
      */
     public function distance(Request $request)
     {
@@ -36,7 +35,7 @@ class DistanceController extends AbstractController
                     "errors" => "invalid json"
                 ],
                 JsonResponse::HTTP_BAD_REQUEST
-            ); 
+            );
         }
 
         $validator = Validation::createValidator();
@@ -55,7 +54,7 @@ class DistanceController extends AbstractController
             "longitudeFrom" => [
                 new Assert\NotBlank([
                     "message" => "Missing value longitudeFrom"
-                ]),            
+                ]),
                 new Assert\Range([
                     "min" => -180,
                     "max" => 180,
@@ -75,7 +74,7 @@ class DistanceController extends AbstractController
             "longitudeTo" => [
                 new Assert\NotBlank([
                     "message" => "Missing value longitudeTo"
-                ]),            
+                ]),
                 new Assert\Range([
                     "min" => -180,
                     "max" => 180,
@@ -95,11 +94,9 @@ class DistanceController extends AbstractController
             $constraint
         );
         
-        if (0 !== $errors->count())
-        {
+        if (0 !== $errors->count()) {
             $errorsOutput=[];
-            foreach($errors as $error)
-            {
+            foreach ($errors as $error) {
                 $errorsOutput[]=$error->getMessage();
             }
 
@@ -110,17 +107,14 @@ class DistanceController extends AbstractController
         }
         $calculatingMethod = $data["calculatingMethod"] ?? "vincenty";
         
-        if ($calculatingMethod == "haversine")
-        {
+        if ($calculatingMethod == "haversine") {
             $distanceKilometers = HaversineDistance::getDistance(
                 (float)$data["latitudeFrom"],
                 (float)$data["longitudeFrom"],
                 (float)$data["latitudeTo"],
                 (float)$data["longitudeTo"]
             );
-        }
-        else
-        {
+        } else {
             $distance = new Distance(
                 new LatLong(
                     new Coordinate((float)$data["latitudeFrom"]),
@@ -129,7 +123,7 @@ class DistanceController extends AbstractController
                 new LatLong(
                     new Coordinate((float)$data["latitudeTo"]),
                     new Coordinate((float)$data["longitudeTo"])
-                )            
+                )
             );
             $distanceKilometers = round($distance->get(new Vincenty, new MetreToKilometre), 3);
         }
@@ -142,6 +136,6 @@ class DistanceController extends AbstractController
                 "distanceMeters" => $distanceMeters,
                 "calculatingMethod" => $calculatingMethod
             ]
-        );   
+        );
     }
 }

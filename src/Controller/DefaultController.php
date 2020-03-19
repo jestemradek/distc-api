@@ -18,6 +18,5 @@ class DefaultController extends AbstractController
                 "message" => "Welcome to DistC API - GPS Distance Calculator"
             ]
         );
-        
     }
 }

@@ -13,3 +13,5 @@
 .phpunit
 .phpunit.result.cache
 ###< symfony/phpunit-bridge ###
+
+.php_cs.cache
