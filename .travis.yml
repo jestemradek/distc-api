@@ -5,6 +5,8 @@ before_install:
   - composer selfupdate
 install:
   - composer install
+before_script:
+  - php -S localhost:8000 -t public > /dev/null 2>&1&
 script:
   - ./bin/phpunit
   - ./vendor/bin/php-cs-fixer fix --diff --dry-run -v
