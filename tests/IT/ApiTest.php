@@ -47,7 +47,7 @@ class ApiTest extends TestCase
     public function testZeroCoordinates()
     {
         $response = $this->http->request(
-            'GET',
+            'POST',
             'distance',
             [
                 'json' => [
@@ -72,7 +72,7 @@ class ApiTest extends TestCase
     public function testNewYorkToWarsawHaversineDistance()
     {
         $response = $this->http->request(
-            'GET',
+            'POST',
             'distance',
             [
                 'json' => [
