@@ -7,8 +7,7 @@ The "DistC API" is a demonstration application of a distance calculator between 
 To calculate the distance very precisely I used the [Vincenty's formulae][2] implemented in the [treffynnon/Navigator][3] library.
 I also wanted to show that I can implement the distance calculation method myself. I used the [Haversine formula][4] in HaversineDistance class.
 
-This project is the backend part. I also created the frontend in Vue.js using this API:
-link to project in future...
+This project is the backend part. I also created the frontend in Vue.js using this API: [link to project][5]
 
 ## Requirements
 
@@ -68,3 +67,4 @@ $ curl -H "Content-type: application/json" -d '{
 [2]: https://en.wikipedia.org/wiki/Vincenty%27s_formulae
 [3]: https://github.com/treffynnon/Navigator
 [4]: https://en.wikipedia.org/wiki/Haversine_formula
+[5]: https://github.com/jestemradek/distc
