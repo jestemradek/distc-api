@@ -22,7 +22,7 @@ link to project in future...
 Download project to your PC and install depedencies:
 
 ```bash
-$ git git@github.com:jestemradek/distc-api.git
+$ git clone https://github.com/jestemradek/distc-api.git
 $ cd distc-api
 $ composer install
 ```
